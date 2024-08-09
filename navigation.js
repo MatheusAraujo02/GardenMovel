@@ -1,12 +1,15 @@
 import * as React from 'react';
 import { NavigationContainer } from '@react-navigation/native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+import { createDrawerNavigator} from '@react-navigation/drawer';
 import Home from './src/home';
 import Diario from './src/diario';
 import Emocao from './src/emocao';
+import Config from './src/config.js';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 
 const Tab = createBottomTabNavigator();
+const Drawer = createDrawerNavigator();
 
 const routIcons = {
   Inicio: 'home',
@@ -38,10 +41,19 @@ function MyTabs() {
   );
 }
 
+function MyDrawer() {
+  return (
+    <Drawer.Navigator initialRouteName='Inicio'>
+      <Drawer.Screen name="Inicio" component={MyTabs} />
+      <Drawer.Screen name='Configurações' component={Config} />
+    </Drawer.Navigator>
+  );
+}
+
 export default function AppNavigation() {
   return (
     <NavigationContainer>
-      <MyTabs />
+      <MyDrawer />
     </NavigationContainer>
   );
 }
