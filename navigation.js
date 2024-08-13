@@ -34,7 +34,7 @@ function MyTabs() {
        }}
 
        >
-      <Tab.Screen name="Inicio" component={Home}/>
+      <Tab.Screen name="Inicio" component={Home} />
       <Tab.Screen name="Diario" component={Diario} />
       <Tab.Screen name="Emoção" component={Emocao} />
     </Tab.Navigator>
@@ -43,8 +43,8 @@ function MyTabs() {
 
 function MyDrawer() {
   return (
-    <Drawer.Navigator initialRouteName='Inicio'>
-      <Drawer.Screen name="Inicio" component={MyTabs} />
+    <Drawer.Navigator initialRouteName='GARDEN'>
+      <Drawer.Screen name="GARDEN" component={MyTabs} />
       <Drawer.Screen name='Configurações' component={Config} />
     </Drawer.Navigator>
   );
