@@ -21,7 +21,7 @@ const routIcons = {
 function MyTabs() {
   return (
     <Tab.Navigator
-      screenOptions={({ route }) => ({
+      screenOptions={({ route, headerShown=(false) }) => ({
        tabBarIcon: ({ focused, size}) => {
         const iconName = routIcons[route.name];
         const iconNameFocused = `${iconName}${focused ? '' : '-outline'}`;
